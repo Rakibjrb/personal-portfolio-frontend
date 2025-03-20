@@ -1,30 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import Typewriter from "@/utils/type_writter";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Banner() {
-  useEffect(() => {
-    const bannerTitle = document.getElementById("writing-effect");
-    new Typewriter(bannerTitle, {
-      strings: ["Web Developer", "Front End Developer"],
-      autoStart: true,
-      loop: true,
-      delay: 75,
-    });
-  }, []);
-
   return (
     <div className="banner w-full h-screen flex items-center text-color-primary">
       <div className="w-[85%] md:w-[70%] mx-auto">
         <h1 className="text-5xl md:text-7xl my-0">Rakibul Hasan</h1>
         <h2 className="text-xl md:text-3xl mt-3 mb-5">
           {"I'm"} a{" "}
-          <span className="" id="writing-effect">
-            Developer
-          </span>
+          <TypeAnimation
+            sequence={["Web Developer", 2000, "Front End Developer", 2000]}
+            wrapper="span"
+            speed={10}
+            style={{ fontSize: "26px", display: "inline-block" }}
+            repeat={Infinity}
+          />
         </h2>
         <div className="flex gap-4">
           <Link href={""}>
