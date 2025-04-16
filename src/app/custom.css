@@ -1,8 +1,12 @@
 /* custom css */
 .banner {
-  background: linear-gradient(#ffffff5c, #0000002b);
+  background: linear-gradient(#ffffff, #0000000c);
 }
 
 .text-color-primary {
   color: #525252;
+}
+
+.text-color-secondery {
+  color: #52dde2;
 }
