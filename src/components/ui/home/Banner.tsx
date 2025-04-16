@@ -11,13 +11,15 @@ export default function Banner() {
         <h1 className="text-5xl md:text-7xl my-0">Rakibul Hasan</h1>
         <h2 className="text-xl md:text-3xl mt-3 mb-5">
           {"I'm"} a{" "}
-          <TypeAnimation
-            sequence={["Web Developer", 2000, "Front End Developer", 2000]}
-            wrapper="span"
-            speed={10}
-            style={{ fontSize: "26px", display: "inline-block" }}
-            repeat={Infinity}
-          />
+          <span className="text-color-secondery">
+            <TypeAnimation
+              sequence={["Web Developer", 2000, "Front End Developer", 2000]}
+              wrapper="span"
+              speed={10}
+              style={{ fontSize: "26px", display: "inline-block" }}
+              repeat={Infinity}
+            />
+          </span>
         </h2>
         <div className="flex gap-4">
           <Link href={""}>
