@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Lock } from "lucide-react"; // Make sure you have lucide-react installed
+import { Lock } from "lucide-react";
 
 const AdminLoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
