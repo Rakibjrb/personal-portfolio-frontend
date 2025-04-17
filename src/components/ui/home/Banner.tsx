@@ -6,8 +6,8 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Banner() {
   return (
-    <div className="banner w-full h-screen flex items-center text-color-primary">
-      <div className="w-[85%] md:w-[70%] mx-auto">
+    <div className="banner w-full h-screen lg:h-[calc(100vh-100px)] flex items-center text-color-primary">
+      <div className="container mx-auto px-4 xl:px-0">
         <h1 className="text-5xl md:text-7xl my-0">Rakibul Hasan</h1>
         <h2 className="text-xl md:text-3xl mt-3 mb-5">
           {"I'm"} a{" "}

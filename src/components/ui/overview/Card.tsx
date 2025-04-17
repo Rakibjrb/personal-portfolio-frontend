@@ -8,7 +8,7 @@ export default function Card({
   title: string;
 }) {
   return (
-    <div className="rounded-lg py-10 px-6 flex flex-col justify-center items-center gap-4 bg-white shadow-2xl">
+    <div className="rounded-xl py-10 px-6 flex flex-col justify-center items-center gap-4 bg-white shadow-xl">
       <h1
         className={`text-3xl md:text-4xl font-bold text-center text-color-secondery`}
       >

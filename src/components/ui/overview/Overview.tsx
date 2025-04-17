@@ -19,7 +19,7 @@ const overview = [
   },
   {
     total: 2,
-    title: "Experienced",
+    title: "Year Experience",
   },
 ];
 
