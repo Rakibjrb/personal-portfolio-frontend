@@ -15,7 +15,7 @@ export default function About() {
           />
         </div>
         <div className="lg:w-2/3">
-          <h2 className="text-center md:text-left text-5xl font-semibold mb-10">
+          <h2 className="text-center md:text-left text-5xl mb-10">
             About <span className="text-color-secondery">Me</span>
           </h2>
           <p className="text-xl text-justify xl:text-left">
