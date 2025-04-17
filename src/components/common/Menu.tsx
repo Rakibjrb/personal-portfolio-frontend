@@ -9,6 +9,7 @@ import {
   GraduationCap,
   Mail,
 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Menu() {
@@ -22,38 +23,56 @@ export default function Menu() {
         } transition-all duration-700 overflow-hidden`}
       >
         <div className="h-full relative">
-          <div className="menu-links-style bottom-[10px] left-[20px] md:bottom-[20px] md:left-[80px]">
+          <Link
+            href={"/"}
+            className="menu-links-style bottom-[10px] left-[20px] md:bottom-[20px] md:left-[80px]"
+          >
             <Home size={30} />
             <span className="uppercase text-center hidden md:block">Home</span>
-          </div>
-          <div className="menu-links-style bottom-[60px] left-[40px] md:bottom-[130px] md:left-[120px]">
+          </Link>
+          <Link
+            href={"/"}
+            className="menu-links-style bottom-[60px] left-[40px] md:bottom-[130px] md:left-[120px]"
+          >
             <FolderKanban size={30} />
             <span className="uppercase text-center hidden md:block">
               Projects
             </span>
-          </div>
-          <div className="menu-links-style bottom-[90px] left-[90px] md:-top-[10px] md:left-[220px]">
+          </Link>
+          <Link
+            href={"/"}
+            className="menu-links-style bottom-[90px] left-[90px] md:-top-[10px] md:left-[220px]"
+          >
             <BrainCircuit size={30} />
             <span className="uppercase text-center hidden md:block">
               Skills
             </span>
-          </div>
-          <div className="menu-links-style bottom-[90px] right-[90px] md:-top-[40px] md:right-[270px]">
+          </Link>
+          <Link
+            href={"/"}
+            className="menu-links-style bottom-[90px] right-[90px] md:-top-[40px] md:right-[270px]"
+          >
             <GraduationCap size={30} />
             <span className="uppercase text-center hidden md:block">
               Educations
             </span>
-          </div>
-          <div className="menu-links-style bottom-[60px] right-[40px] md:bottom-[130px] md:right-[120px]">
+          </Link>
+          <Link
+            href={"/"}
+            className="menu-links-style bottom-[60px] right-[40px] md:bottom-[130px] md:right-[120px]"
+          >
             <FileText size={30} />
             <span className="uppercase text-center hidden md:block">Blogs</span>
-          </div>
-          <div className="menu-links-style bottom-[10px] right-[20px] md:bottom-[20px] md:right-[80px]">
+          </Link>
+          <Link
+            href={"/"}
+            className="menu-links-style bottom-[10px] right-[20px] md:bottom-[20px] md:right-[80px]"
+          >
             <Mail size={30} />
             <span className="uppercase text-center hidden md:block">
               Contact
             </span>
-          </div>
+          </Link>
         </div>
       </div>
       <button
