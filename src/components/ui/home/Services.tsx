@@ -31,9 +31,12 @@ export default function Services() {
   return (
     <div>
       <div className="text-center mb-10">
-        <h2 className="text-5xl">
+        <h2 className="text-5xl mb-2">
           My <span className="text-color-secondery">Services</span>
         </h2>
+        <div className="mb-3 flex justify-center">
+          <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
+        </div>
         <h3 className="mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
           Web desgin and development have been my bread and buffer for more than
           2 years. During that time {"I've"} discovered that I can help startups

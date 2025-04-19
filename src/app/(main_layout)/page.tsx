@@ -13,8 +13,8 @@ export default function Home() {
       </div>
       <div className="mt-20 container mx-auto px-4 xl:px-0 space-y-20">
         <About />
-        <Services />
         <Educations />
+        <Services />
         <div></div>
       </div>
     </div>
