@@ -5,10 +5,13 @@ import { Lock } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { TbFidgetSpinner } from "react-icons/tb";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const AdminLoginForm: React.FC = () => {
   const [isLoading, setisLoading] = useState(false);
   const { register, handleSubmit } = useForm();
+  const router = useRouter();
 
   const onSubmit = async (data: object) => {
     setisLoading(true);
@@ -20,10 +23,13 @@ const AdminLoginForm: React.FC = () => {
     const res = await signIn("credentials", credentials);
     if (res?.error) {
       setisLoading(false);
-      return console.log("login failed");
+      return toast.error("Admin Login failed", { duration: 4000 });
     }
     setisLoading(false);
-    console.log("login successfull");
+    toast.success("Admin Login Success", { duration: 4000 });
+    setTimeout(() => {
+      router.refresh();
+    }, 1000);
   };
 
   return (
