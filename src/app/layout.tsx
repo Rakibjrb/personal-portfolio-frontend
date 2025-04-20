@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
 import "./custom.css";
+import { Toaster } from "react-hot-toast";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${kanit.className} antialiased`}>{children}</body>
+      <body className={`${kanit.className} antialiased`}>
+        {children}
+        <Toaster position="top-right" reverseOrder={false} />
+      </body>
     </html>
   );
 }

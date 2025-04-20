@@ -15,9 +15,12 @@ export default function About() {
           />
         </div>
         <div className="lg:w-2/3">
-          <h2 className="text-center md:text-left text-5xl mb-10">
+          <h2 className="text-center md:text-left text-5xl mb-2">
             About <span className="text-color-secondery">Me</span>
           </h2>
+          <div className="mb-8 flex justify-center md:justify-start">
+            <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
+          </div>
           <p className="text-xl text-justify xl:text-left">
             Hello, I am Rakibul Hasan, a passionate Front End and MERN stack web
             developer with a keen eye for design and a love for crafting

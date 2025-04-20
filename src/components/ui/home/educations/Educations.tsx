@@ -20,9 +20,11 @@ const educations = [
 export default function Educations() {
   return (
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-center text-5xl text-color-secondery mb-3">
-        Educations
-      </h2>
+      <h2 className="text-center text-5xl mb-2">Educations</h2>
+
+      <div className="mb-3 flex justify-center">
+        <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
+      </div>
 
       <div className="space-y-5">
         {educations.map((edu) => (
@@ -30,7 +32,13 @@ export default function Educations() {
             key={edu.img}
             className="bg-white shadow-lg rounded-xl p-5 md:flex items-center gap-6"
           >
-            <Image src={edu.img} width={150} height={150} alt={edu.title} />
+            <Image
+              className="w-[150px] h-[150px]"
+              src={edu.img}
+              width={150}
+              height={150}
+              alt={edu.title}
+            />
             <div className="mt-3 md:mt-0 space-y-1">
               <h3 className="text-2xl font-bold">{edu.title}</h3>
               <h4 className="text-xl">{edu.name}</h4>
