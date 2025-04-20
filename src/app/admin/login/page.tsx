@@ -2,13 +2,20 @@
 
 import React, { useState } from "react";
 import { Lock } from "lucide-react";
+import { signIn } from "next-auth/react";
 
 const AdminLoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const loginResponse = await signIn("credentials", { email, password });
+    if (loginResponse?.error) {
+      return console.log("Login Failed");
+    }
+
+    console.log("admin login successfull");
   };
 
   return (
