@@ -9,7 +9,6 @@ const AdminLoginForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ email, password });
   };
 
   return (
