@@ -8,7 +8,7 @@ export function axiosPublic() {
 
   instance.interceptors.request.use(
     function (config) {
-      config.headers.authorization = `Bearer ${process.env.NEXT_PUBLIC_SITE_TOKEN}`;
+      config.headers.authorization = `Bearer ${process.env.NEXT_SECRETE_SITE_TOKEN}`;
       return config;
     },
     function (error) {
