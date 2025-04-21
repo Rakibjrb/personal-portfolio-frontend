@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get("next-auth.session-token")?.value;
+  const token = request.cookies.get(`${process.env.NEXT_PUBLIC_TOKEN}`)?.value;
 
   const loggedUserCantAccessPaths = request.nextUrl.pathname == "/admin/login";
   if (loggedUserCantAccessPaths) {
