@@ -14,14 +14,19 @@ const authOptions: NextAuthOptions = {
         if (!res.data.login) {
           throw new Error("Login failed");
         }
-        (await cookies()).set("token", `Bearer ${res.data.token}`, {
-          httpOnly: true,
-          sameSite: "lax",
-        });
+        (await cookies()).set(
+          `${process.env.NEXT_SECRET_TOKEN}`,
+          `Bearer ${res.data.token}`,
+          {
+            httpOnly: true,
+            sameSite: "lax",
+          }
+        );
         return res.data;
       },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);

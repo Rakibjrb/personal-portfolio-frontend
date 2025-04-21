@@ -27,9 +27,7 @@ const AdminLoginForm: React.FC = () => {
     }
     setisLoading(false);
     toast.success("Admin Login Success", { duration: 4000 });
-    setTimeout(() => {
-      router.refresh();
-    }, 1000);
+    router.refresh();
   };
 
   return (
