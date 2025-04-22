@@ -13,7 +13,7 @@ const useCounter = (
 
     const interval = setInterval(() => {
       countFunc((prevTotal) => prevTotal + 1);
-    }, 250);
+    }, 100);
 
     return () => clearInterval(interval);
   }, [count, countFunc, countTo]);
