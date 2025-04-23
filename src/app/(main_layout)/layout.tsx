@@ -1,14 +1,35 @@
+"use client";
+
+import { motion, useScroll } from "motion/react";
 import Menu from "@/components/common/Menu";
 
-export default function layout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { scrollYProgress } = useScroll();
+
   return (
-    <div className="overflow-hidden">
-      <Menu />
-      {children}
-    </div>
+    <>
+      <motion.div
+        id="scroll-indicator"
+        style={{
+          scaleX: scrollYProgress,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 10,
+          originX: 0,
+          backgroundColor: "#52dde2",
+        }}
+      />
+
+      <div className="overflow-hidden">
+        <Menu />
+        {children}
+      </div>
+    </>
   );
 }

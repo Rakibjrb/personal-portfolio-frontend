@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function Menu() {
   const [menu, setMenu] = useState<boolean>(false);
@@ -75,13 +76,17 @@ export default function Menu() {
           </Link>
         </div>
       </div>
-      <button
+      <motion.button
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
         onClick={() => setMenu(!menu)}
         className="fixed transform left-1/2 -translate-x-1/2 bottom-3 md:bottom-6 z-50 bg-[#52dde2] p-2 rounded-xl hover:bg-[#8bd1d6] hover:shadow-2xl transition-all duration-300"
       >
         <Grid3x3 className="hidden md:block" size={50} />
         <Grid3x3 className="md:hidden" size={30} />
-      </button>
+      </motion.button>
     </div>
   );
 }

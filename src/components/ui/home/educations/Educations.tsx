@@ -1,3 +1,4 @@
+import Motion from "@/components/common/Motion";
 import Image from "next/image";
 
 const educations = [
@@ -20,31 +21,35 @@ const educations = [
 export default function Educations() {
   return (
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-center text-5xl mb-2">Educations</h2>
-
-      <div className="mb-3 flex justify-center">
-        <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
-      </div>
+      <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
+        <h2 className="text-center text-5xl mb-2">Educations</h2>
+        <div className="mb-3 flex justify-center">
+          <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
+        </div>
+      </Motion>
 
       <div className="space-y-5">
         {educations.map((edu) => (
-          <div
+          <Motion
+            initial={{ opacity: 0, x: 50 }}
+            inView={{ opacity: 1, x: 0 }}
             key={edu.img}
-            className="bg-white shadow-lg rounded-xl p-5 md:flex items-center gap-6 hover-primary"
           >
-            <Image
-              className="w-[150px] h-[150px]"
-              src={edu.img}
-              width={150}
-              height={150}
-              alt={edu.title}
-            />
-            <div className="mt-3 md:mt-0 space-y-1">
-              <h3 className="text-2xl font-bold">{edu.title}</h3>
-              <h4 className="text-xl">{edu.name}</h4>
-              <p>{edu.details}</p>
+            <div className="bg-white shadow-lg rounded-xl p-5 md:flex items-center gap-6 hover-primary">
+              <Image
+                className="w-[150px] h-[150px]"
+                src={edu.img}
+                width={150}
+                height={150}
+                alt={edu.title}
+              />
+              <div className="mt-3 md:mt-0 space-y-1">
+                <h3 className="text-2xl font-bold">{edu.title}</h3>
+                <h4 className="text-xl">{edu.name}</h4>
+                <p>{edu.details}</p>
+              </div>
             </div>
-          </div>
+          </Motion>
         ))}
       </div>
     </div>
