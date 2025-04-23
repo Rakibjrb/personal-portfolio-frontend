@@ -30,7 +30,7 @@ export default function Educations() {
         {educations.map((edu) => (
           <div
             key={edu.img}
-            className="bg-white shadow-lg rounded-xl p-5 md:flex items-center gap-6"
+            className="bg-white shadow-lg rounded-xl p-5 md:flex items-center gap-6 hover-primary"
           >
             <Image
               className="w-[150px] h-[150px]"

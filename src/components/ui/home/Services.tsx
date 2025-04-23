@@ -1,9 +1,11 @@
 import { Palette, Code, BarChart2 } from "lucide-react";
 
 const icon = [
-  { icon: <Palette className="text-color-secondery" size={70} /> },
-  { icon: <Code className="text-color-secondery" size={70} /> },
-  { icon: <BarChart2 className="text-color-secondery" size={70} /> },
+  { icon: <Palette className="text-color-secondery service-icon" size={70} /> },
+  { icon: <Code className="text-color-secondery service-icon" size={70} /> },
+  {
+    icon: <BarChart2 className="text-color-secondery service-icon" size={70} />,
+  },
 ];
 
 const services = [
@@ -48,7 +50,7 @@ export default function Services() {
         {services.map((service, index) => (
           <div
             key={service.id}
-            className="space-y-4 shadow-xl p-6 xl:p-10 rounded-lg"
+            className="space-y-4 shadow-xl p-6 xl:p-10 rounded-lg hover-primary service-card"
           >
             {icon[index].icon}
             <h4 className="text-xl font-semibold uppercase">{service.title}</h4>
