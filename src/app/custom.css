@@ -1,4 +1,8 @@
 /* custom css */
+body {
+  scroll-behavior: smooth;
+}
+
 .banner {
   background: linear-gradient(#ffffff, #0000000c);
 }
@@ -9,4 +13,10 @@
 
 .text-color-secondery {
   color: #52dde2;
+}
+
+.overview-card:hover .overview-count,
+.service-card:hover .service-icon {
+  color: #000;
+  transition: 0.3s;
 }

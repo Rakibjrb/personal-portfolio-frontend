@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import "./custom.css";
-import { Toaster } from "react-hot-toast";
 
 const kanit = Kanit({
   subsets: ["latin"],

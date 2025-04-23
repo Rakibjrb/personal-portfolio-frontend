@@ -3,3 +3,7 @@
 .menu-links-style {
   @apply flex flex-col justify-center items-center w-[60px] absolute;
 }
+
+.hover-primary {
+  @apply hover:bg-[#52dde2] hover:drop-shadow-2xl transition-all duration-300;
+}
