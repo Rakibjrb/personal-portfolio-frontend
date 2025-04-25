@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .menu-links-style {
-  @apply flex flex-col justify-center items-center w-[60px] absolute;
+  @apply flex flex-col justify-center items-center w-[60px];
 }
 
 .hover-primary {

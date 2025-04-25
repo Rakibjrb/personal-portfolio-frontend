@@ -16,7 +16,7 @@ import {
   SiMongodb,
 } from "react-icons/si";
 
-const skills = [
+export const skills = [
   {
     id: "01",
     icon: <FaHtml5 className="text-orange-500 text-6xl" />,
