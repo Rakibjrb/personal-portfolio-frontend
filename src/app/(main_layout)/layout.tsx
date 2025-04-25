@@ -2,6 +2,7 @@
 
 import { motion, useScroll } from "motion/react";
 import Menu from "@/components/common/Menu";
+import Footer from "@/components/common/Footer";
 
 export default function Layout({
   children,
@@ -29,6 +30,7 @@ export default function Layout({
       <div className="overflow-hidden">
         <Menu />
         {children}
+        <Footer />
       </div>
     </>
   );
