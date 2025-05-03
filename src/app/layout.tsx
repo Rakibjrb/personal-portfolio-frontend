@@ -1,4 +1,7 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Kanit } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
@@ -10,20 +13,19 @@ const kanit = Kanit({
   variable: "--font-kanit",
 });
 
-export const metadata: Metadata = {
-  title: "Portfolio | Rakibul Hasan",
-  description: "Portfolio of Rakibul Hasan",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
     <html lang="en">
       <body className={`${kanit.className} antialiased`}>
-        {children}
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
         <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
