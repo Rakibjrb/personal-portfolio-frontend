@@ -20,3 +20,7 @@ body {
   color: #000;
   transition: 0.3s;
 }
+
+.project_card:hover .project_card_text_container {
+  bottom: 0;
+}
