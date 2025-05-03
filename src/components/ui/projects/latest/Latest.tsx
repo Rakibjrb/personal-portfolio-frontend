@@ -4,11 +4,11 @@ import Loading from "@/components/common/Loading";
 import useLatestProjects from "@/hooks/projects/useLatestProjects";
 import Image from "next/image";
 
-interface project {
+type project = {
   _id: string;
   project_name: string;
   image: string;
-}
+};
 
 export default function Latest() {
   const { data, isLoading } = useLatestProjects();
