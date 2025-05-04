@@ -13,9 +13,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
 import * as clickAnimation from "motion/react-client";
+import { usePathname } from "next/navigation";
 
 export default function Menu() {
   const [menu, setMenu] = useState<boolean>(false);
+  const path = usePathname();
 
   return (
     <div className="z-30 overflow-hidden">
@@ -27,7 +29,9 @@ export default function Menu() {
         <div className="h-full relative">
           <Link
             href={"/"}
-            className="absolute bottom-[10px] left-[20px] md:bottom-[20px] md:left-[80px]"
+            className={`absolute bottom-[10px] left-[20px] md:bottom-[20px] md:left-[80px] ${
+              path === "/" ? "text-color-secondery" : ""
+            }`}
           >
             <clickAnimation.div
               whileHover={{ scale: 1.2 }}
@@ -41,8 +45,10 @@ export default function Menu() {
             </clickAnimation.div>
           </Link>
           <Link
-            href={"/"}
-            className="absolute bottom-[60px] left-[40px] md:bottom-[130px] md:left-[120px]"
+            href={"/projects"}
+            className={`absolute bottom-[60px] left-[40px] md:bottom-[130px] md:left-[120px] ${
+              path === "/projects" ? "text-color-secondery" : ""
+            }`}
           >
             <clickAnimation.div
               whileHover={{ scale: 1.2 }}
@@ -56,8 +62,10 @@ export default function Menu() {
             </clickAnimation.div>
           </Link>
           <Link
-            href={"/"}
-            className="absolute bottom-[90px] left-[90px] md:top-[90px] md:left-[220px]"
+            href={"/skills"}
+            className={`absolute bottom-[90px] left-[90px] md:top-[90px] md:left-[220px] ${
+              path === "/skills" ? "text-color-secondery" : ""
+            }`}
           >
             <clickAnimation.div
               whileHover={{ scale: 1.2 }}
@@ -72,7 +80,9 @@ export default function Menu() {
           </Link>
           <Link
             href={"/educations"}
-            className="absolute bottom-[90px] right-[90px] md:top-[70px] md:right-[260px]"
+            className={`absolute bottom-[90px] right-[90px] md:top-[70px] md:right-[260px] ${
+              path === "/educations" ? "text-color-secondery" : ""
+            }`}
           >
             <clickAnimation.div
               whileHover={{ scale: 1.2 }}
@@ -86,8 +96,10 @@ export default function Menu() {
             </clickAnimation.div>
           </Link>
           <Link
-            href={"/"}
-            className="absolute bottom-[60px] right-[40px] md:bottom-[130px] md:right-[120px]"
+            href={"/blogs"}
+            className={`absolute bottom-[60px] right-[40px] md:bottom-[130px] md:right-[120px] ${
+              path === "/blogs" ? "text-color-secondery" : ""
+            }`}
           >
             <clickAnimation.div
               whileHover={{ scale: 1.2 }}
@@ -101,8 +113,10 @@ export default function Menu() {
             </clickAnimation.div>
           </Link>
           <Link
-            href={"/"}
-            className="absolute bottom-[10px] right-[20px] md:bottom-[20px] md:right-[80px]"
+            href={"/contact"}
+            className={`absolute bottom-[10px] right-[20px] md:bottom-[20px] md:right-[80px] ${
+              path === "/contact" ? "text-color-secondery" : ""
+            }`}
           >
             <clickAnimation.div
               whileHover={{ scale: 1.2 }}
