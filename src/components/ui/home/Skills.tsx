@@ -34,7 +34,7 @@ export const skills = [
   {
     id: "022",
     icon: <SiTailwindcss className="text-cyan-500 text-6xl" />,
-    name: "Tailwind CSS",
+    name: "Tailwind",
     details:
       "Style web pages using CSS. Learned about the design of web pages and also learned about responsive design.",
   },
@@ -55,28 +55,28 @@ export const skills = [
   {
     id: "04",
     icon: <SiReact className="text-cyan-400 text-6xl" />,
-    name: "ReactJS",
+    name: "React",
     details:
       "Built user interfaces using React. Learned about reusable components.",
   },
   {
     id: "044",
     icon: <SiNextdotjs className="text-black dark:text-white text-6xl" />,
-    name: "NextJS",
+    name: "Next",
     details:
       "Built user interfaces using React. Learned about reusable components.",
   },
   {
     id: "05",
     icon: <FaNodeJs className="text-green-600 text-6xl" />,
-    name: "NodeJS",
+    name: "Node",
     details:
       "Built server-side applications using Node.js. Learned about how a web server side working and handling client side request.",
   },
   {
     id: "06",
     icon: <SiExpress className="text-gray-600 dark:text-gray-300 text-6xl" />,
-    name: "ExpressJS",
+    name: "Express",
     details:
       "Built server-side applications using Express.js. Learned about APIs and http request handling.",
   },
