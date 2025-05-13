@@ -3,7 +3,7 @@ import { skills } from "../home/Skills";
 
 export default function SkillsDetails() {
   return (
-    <div className="max-w-6xl mx-auto px-4 xl:px-0 my-12">
+    <div className="max-w-6xl mx-auto px-4 xl:px-0 ">
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
         <h2 className="text-center text-5xl mb-2">Skills</h2>
         <div className="mb-3 flex justify-center">

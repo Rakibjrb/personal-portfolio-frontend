@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: { project: project }) {
       />
       <div className="project_card_text_container absolute -bottom-[300px] left-0 w-full h-full bg-[#00000084] flex justify-center items-center rounded-xl transition-all duration-700">
         <Link
-          href={`/project/details/${project._id}`}
+          href={`/projects/details/${project._id}`}
           className="text-xl text-center text-white font-bold"
         >
           {project.project_name}

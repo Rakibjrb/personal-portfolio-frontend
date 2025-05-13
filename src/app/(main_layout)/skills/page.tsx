@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function SkillsPage() {
   return (
-    <div>
+    <div className="py-6 lg:py-14">
       <SkillsDetails />
     </div>
   );
