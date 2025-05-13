@@ -1,11 +1,15 @@
 "use client";
 
 import Motion from "@/components/common/Motion";
+import useProfileLinks from "@/hooks/useProfileLinks";
 import Link from "next/link";
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 
 export default function Banner() {
+  const { data, isLoading } = useProfileLinks();
+  console.log(data);
+
   return (
     <div className="banner w-full h-screen lg:h-[calc(100vh-100px)] flex items-center text-color-primary">
       <div className="container mx-auto px-4 xl:px-0">
@@ -23,17 +27,27 @@ export default function Banner() {
               />
             </span>
           </h2>
-          <div className="flex gap-4">
-            <Link href={""}>
-              <FaFacebookSquare className="text-3xl" />
-            </Link>
-            <Link href={""}>
-              <FaGithubSquare className="text-3xl" />
-            </Link>
-            <Link href={""}>
-              <FaLinkedin className="text-3xl" />
-            </Link>
-          </div>
+
+          {isLoading ? (
+            ""
+          ) : (
+            <Motion
+              initial={{ opacity: 0, y: 50 }}
+              inView={{ opacity: 1, y: 0 }}
+            >
+              <div className="flex gap-4">
+                <Link href={data[0].link}>
+                  <FaGithubSquare className="text-3xl" />
+                </Link>
+                <Link href={data[2].link}>
+                  <FaFacebookSquare className="text-3xl" />
+                </Link>
+                <Link href={data[1].link}>
+                  <FaLinkedin className="text-3xl" />
+                </Link>
+              </div>
+            </Motion>
+          )}
         </Motion>
       </div>
     </div>
