@@ -8,7 +8,6 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Banner() {
   const { data, isLoading } = useProfileLinks();
-  console.log(data);
 
   return (
     <div className="banner w-full h-screen lg:h-[calc(100vh-100px)] flex items-center text-color-primary">
@@ -36,13 +35,13 @@ export default function Banner() {
               inView={{ opacity: 1, y: 0 }}
             >
               <div className="flex gap-4">
-                <Link href={data[0].link}>
+                <Link href={data[0].link} target="blank">
                   <FaGithubSquare className="text-3xl" />
                 </Link>
-                <Link href={data[2].link}>
+                <Link href={data[2].link} target="blank">
                   <FaFacebookSquare className="text-3xl" />
                 </Link>
-                <Link href={data[1].link}>
+                <Link href={data[1].link} target="blank">
                   <FaLinkedin className="text-3xl" />
                 </Link>
               </div>

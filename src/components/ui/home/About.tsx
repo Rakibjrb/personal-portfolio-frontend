@@ -1,9 +1,13 @@
 "use client";
+
 import Motion from "@/components/common/Motion";
+import useProfileLinks from "@/hooks/useProfileLinks";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
+  const { data, isLoading } = useProfileLinks();
+
   return (
     <div>
       <div className="mt-5 flex flex-col lg:flex-row lg:items-center gap-10">
@@ -58,21 +62,25 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <Link
-                href={"/"}
-                target="blank"
-                className="border bg-[#52dde2] hover:bg-transparent py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
-              >
-                Download Resume
-              </Link>
-              <Link
-                href={"/"}
-                className="border hover:bg-[#52dde2] py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
-              >
-                Education
-              </Link>
-            </div>
+            {isLoading ? (
+              ""
+            ) : (
+              <div className="flex gap-3">
+                <Link
+                  href={data[3].link || "/"}
+                  target="blank"
+                  className="border bg-[#52dde2] hover:bg-transparent py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
+                >
+                  Download Resume
+                </Link>
+                <Link
+                  href={"/educations"}
+                  className="border hover:bg-[#52dde2] py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
+                >
+                  Education
+                </Link>
+              </div>
+            )}
           </Motion>
         </div>
       </div>
