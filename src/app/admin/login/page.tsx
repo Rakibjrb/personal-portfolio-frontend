@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import { Lock } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { TbFidgetSpinner } from "react-icons/tb";
@@ -9,12 +8,14 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const AdminLoginForm: React.FC = () => {
-  const [isLoading, setisLoading] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm();
   const router = useRouter();
 
   const onSubmit = async (data: object) => {
-    setisLoading(true);
     const credentials = {
       ...data,
       redirect: false,
@@ -22,10 +23,8 @@ const AdminLoginForm: React.FC = () => {
 
     const res = await signIn("credentials", credentials);
     if (res?.error) {
-      setisLoading(false);
       return toast.error("Admin Login failed", { duration: 4000 });
     }
-    setisLoading(false);
     toast.success("Admin Login Success", { duration: 4000 });
     router.refresh();
   };
@@ -71,7 +70,7 @@ const AdminLoginForm: React.FC = () => {
           type="submit"
           className="w-full bg-[#52dde2] text-black font-semibold py-2 rounded-xl hover:bg-[#7ccfd3] hover:cursor-pointer transition duration-300"
         >
-          {isLoading ? (
+          {isSubmitting ? (
             <div className="flex justify-center">
               <TbFidgetSpinner className="text-xl animate-spin" />
             </div>
