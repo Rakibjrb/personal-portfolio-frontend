@@ -1,11 +1,12 @@
-// app/contact/page.tsx or pages/contact.tsx
-
-"use client"; // only if using App Router
+"use client";
 
 import { useForm } from "react-hook-form";
 import { Mail, User, MessageSquareText, Pencil } from "lucide-react";
 import { TbFidgetSpinner } from "react-icons/tb";
 import Motion from "@/components/common/Motion";
+import { axiosPublic } from "@/hooks/axiosPublic";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 type FormData = {
   name: string;
@@ -15,17 +16,28 @@ type FormData = {
 };
 
 export default function ContactPage() {
+  const [loading, isLoading] = useState(false);
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     reset,
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    console.log("Submitted Data:", data);
-    // handle sending the data to your API here
-    reset(); // optional: clear form after submit
+    isLoading(true);
+    axiosPublic()
+      .post("/contacts/post", data)
+      .then(() => {
+        toast.success("Send Successfull");
+      })
+      .catch(() => {
+        toast.error("Send Failed");
+      })
+      .finally(() => {
+        isLoading(false);
+        reset();
+      });
   };
 
   return (
@@ -107,10 +119,10 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={loading}
               className="w-full bg-[#52dde2] hover:bg-[#89fbff] text-black font-semibold py-3 rounded-xl transition-all duration-300 cursor-pointer"
             >
-              {isSubmitting ? (
+              {loading ? (
                 <div className="flex justify-center">
                   <TbFidgetSpinner className="text-xl animate-spin" />
                 </div>
