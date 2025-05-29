@@ -20,8 +20,7 @@ export default function Home() {
       </div>
       <div className="mt-20 container mx-auto px-4 xl:px-0 space-y-20">
         <About />
-        <Services />
-        <Skills />
+
         <div>
           <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
             <div className="text-center mb-10">
@@ -41,6 +40,8 @@ export default function Home() {
           </Motion>
           <Latest />
         </div>
+        <Skills />
+        <Services />
         <div></div>
       </div>
     </div>
