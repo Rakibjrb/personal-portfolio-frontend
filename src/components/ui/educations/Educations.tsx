@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Motion from "@/components/common/Motion";
 import Image from "next/image";
-import { useState } from "react";
+import { bpi_images, kella_images } from "@/utils/data/educationImages";
+import Gallery from "./Gallery";
 
 const educations = [
   {
@@ -12,6 +14,7 @@ const educations = [
     name: "Bogura Polytechnic Institute",
     details:
       "Learned about computer science and technology, algorithms, data structures, and more.",
+    image_gallery: bpi_images,
   },
   {
     _id: "dlkfjaskldfjagdfg",
@@ -20,14 +23,15 @@ const educations = [
     name: "Kella High School",
     details:
       "Gathered knowledge about different subjects, including mathematics, physics, chemistry, and more.",
+    image_gallery: kella_images,
   },
 ];
 
 export default function Educations() {
-  const [showByID, setShowByID] = useState("");
+  const [showByID, setShowByID] = useState(educations[0]._id);
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-7xl mx-auto">
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
         <h2 className="text-center text-5xl mb-2">Educations</h2>
         <div className="mb-3 flex justify-center">
@@ -61,13 +65,21 @@ export default function Educations() {
               <div
                 className={`${
                   showByID === edu._id
-                    ? "p-5 w-full h-auto mt-5 opacity-100"
-                    : "p-0 mt-0 h-0 w-full opacity-0 hidden"
-                } transition-all duration-300 bg-white shadow-lg rounded-xl md:flex items-center gap-6 hover-primary cursor-pointer z-0`}
+                    ? "w-full h-auto mt-5 opacity-100"
+                    : "mt-0 h-0 w-full opacity-0 hidden"
+                } transition-all duration-300 bg-white shadow-lg rounded-xl md:flex items-center gap-6 cursor-pointer z-0`}
               >
-                <div className="w-full text-center text-2xl">
-                  No Content available right now
-                </div>
+                {!edu.image_gallery ? (
+                  <div className="w-full text-center text-2xl">
+                    No Content available right now
+                  </div>
+                ) : (
+                  <div>
+                    {edu._id === showByID && (
+                      <Gallery images={edu.image_gallery} />
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </Motion>

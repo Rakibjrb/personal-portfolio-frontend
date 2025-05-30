@@ -13,19 +13,21 @@ export default function Layout({
 
   return (
     <>
-      <motion.div
-        id="scroll-indicator"
-        style={{
-          scaleX: scrollYProgress,
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 10,
-          originX: 0,
-          backgroundColor: "#52dde2",
-        }}
-      />
+      <div className="z-100">
+        <motion.div
+          id="scroll-indicator"
+          style={{
+            scaleX: scrollYProgress,
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 10,
+            originX: 0,
+            backgroundColor: "#52dde2",
+          }}
+        />
+      </div>
 
       <div className="overflow-hidden">
         <Menu />
