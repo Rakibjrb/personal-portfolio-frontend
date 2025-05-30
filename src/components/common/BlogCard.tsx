@@ -1,0 +1,41 @@
+import Link from "next/link";
+
+type blog = {
+  _id: string;
+  title: string;
+  author: {
+    name: string;
+    published_date: string;
+  };
+  thumbnail_image: string;
+  type: string;
+};
+
+export default function BlogCard({ data }: { data: blog }) {
+  return (
+    <div className="relative space-y-1.5 p-4 rounded-xl z-0">
+      <div className="absolute top-8 left-6 bg-red-500 rounded-md px-3 py-1 uppercase text-white">
+        {data.type}
+      </div>
+      {/* eslint-disable-next-line */}
+      <img
+        src={data.thumbnail_image}
+        className="w-full h-full rounded-xl z-0"
+        alt="blog image title"
+      />
+      <div>
+        <Link
+          href={`/blgos/blog/${data._id}`}
+          className="text-xl md:text-[16px] lg:text-2xl hover:text-blue-500 transition-colors duration-300"
+        >
+          {data.title}
+        </Link>
+      </div>
+
+      <div>
+        <b>{data.author.name}</b>
+        <div>{data.author.published_date}</div>
+      </div>
+    </div>
+  );
+}

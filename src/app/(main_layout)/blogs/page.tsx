@@ -1,3 +1,9 @@
-export default function page() {
-  return <div>blog page</div>;
+import Blogs from "@/components/ui/blogs/blogs/Blogs";
+
+export default function BlogContentPage() {
+  return (
+    <div>
+      <Blogs />
+    </div>
+  );
 }
