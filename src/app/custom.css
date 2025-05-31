@@ -4,7 +4,7 @@ body {
 }
 
 .banner {
-  background: linear-gradient(#ffffff, #c0f5ff);
+  background: linear-gradient(#c0f5ffc1, #ffffff);
 }
 
 .text-color-primary {
@@ -12,10 +12,9 @@ body {
 }
 
 .text-color-secondery {
-  color: #52dde2;
+  color: #0dced4;
 }
 
-.overview-card:hover .overview-count,
 .service-card:hover .service-icon {
   color: #000;
   transition: 0.3s;

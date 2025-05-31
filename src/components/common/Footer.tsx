@@ -8,9 +8,12 @@ export default function Footer() {
     <div className="bg-gradient-to-b from-[#4b4b4b] to-[#353535]">
       <div className="container mx-auto flex flex-col md:flex-row gap-10 md:gap-0 md:justify-between text-[#979B9F] py-16 px-4 xl:px-0">
         <div className="md:w-[40%]">
-          <a className="text-xl md:text-2xl font-semibold font-lato">
+          <Link
+            href="/"
+            className="text-xl md:text-2xl font-semibold font-lato"
+          >
             Rakib<span className="text-[#56cbf9]">ul.</span>
-          </a>
+          </Link>
           <div className="mt-5 space-y-2">
             <p>
               As a junior developer, {"I'm"} committed to creating seamless user
@@ -49,23 +52,23 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="">
+          <div className="/">
             <h3 className="uppercase text-xl font-bold text-white mb-3">
               Terms
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   SaaS Services
                 </Link>
               </li>

@@ -9,13 +9,11 @@ export default function Card({
   title: string;
 }) {
   return (
-    <div className="overview-card rounded-xl py-10 px-6 flex flex-col justify-center items-center gap-4 bg-white shadow-lg hover-primary">
+    <div className=" rounded-xl py-10 px-6 flex flex-col justify-center items-center gap-4 text-black bg-[#abfbffdb] hover:bg-[#52dde2db] shadow-lg transition-all duration-300">
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
-        <h1
-          className={`overview-count text-3xl md:text-4xl font-bold text-center text-color-secondery`}
-        >
+        <div className={` text-3xl md:text-4xl font-bold text-center`}>
           {total}+
-        </h1>
+        </div>
         <h2 className={`text-2xl text-center`}>{title}</h2>
       </Motion>
     </div>

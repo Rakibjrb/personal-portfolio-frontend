@@ -132,22 +132,28 @@ export default function Menu() {
         </div>
       </div>
 
-      <motion.button
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        onClick={() => setMenu(!menu)}
-        className="fixed transform left-1/2 -translate-x-1/2 bottom-3 md:bottom-6 z-50 bg-[#52dde2] p-2 rounded-xl hover:bg-[#8bd1d6] hover:shadow-2xl transition-all duration-300"
+        className="fixed transform left-1/2 -translate-x-1/2 bottom-3 md:bottom-6 z-50 bg-[#52dde2] pt-2 pb-1 px-2 rounded-xl hover:bg-[#8bd1d6] hover:shadow-2xl transition-all duration-300"
       >
-        <clickAnimation.div
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.8 }}
+        <button
+          onClick={() => setMenu(!menu)}
+          aria-label="Toggle menu"
+          aria-expanded={menu}
+          aria-controls="mobile-menu"
         >
-          <Grid3x3 className="hidden md:block" size={50} />
-          <Grid3x3 className="md:hidden" size={30} />
-        </clickAnimation.div>
-      </motion.button>
+          <clickAnimation.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+          >
+            <Grid3x3 className="hidden md:block" size={50} />
+            <Grid3x3 className="md:hidden" size={30} />
+          </clickAnimation.div>
+        </button>
+      </motion.div>
     </div>
   );
 }
