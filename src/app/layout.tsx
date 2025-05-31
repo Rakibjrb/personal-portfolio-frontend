@@ -1,9 +1,5 @@
-"use client";
-
-import { useState } from "react";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Kanit } from "next/font/google";
-import { Toaster } from "react-hot-toast";
+import ClientProvider from "@/providers/ClientProvider";
 import "./globals.css";
 import "./custom.css";
 
@@ -13,41 +9,21 @@ const kanit = Kanit({
   variable: "--font-kanit",
 });
 
+export const metadata = {
+  title: "Rakibul Hasan — Full-Stack Developer | Next.js, React, TypeScript",
+  description:
+    "Explore Rakibul Hasan's portfolio — full-stack developer skilled in modern web tools like React, Next.js, and Tailwind CSS.",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [queryClient] = useState(() => new QueryClient());
-
   return (
-    <html lang="en">
-      <head>
-        {/* ✅ Preconnect to third-party resources */}
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-          crossOrigin=""
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-        <link rel="preconnect" href="http://localhost:5000" />
-
-        {/* ✅ DNS Prefetch */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        <link rel="dns-prefetch" href="//localhost:5000" />
-      </head>
+    <html lang="en" className={kanit.variable}>
       <body className={`${kanit.className} antialiased`}>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
-        <Toaster position="top-right" reverseOrder={false} />
+        <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
   );
