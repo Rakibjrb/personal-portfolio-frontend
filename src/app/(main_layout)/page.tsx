@@ -5,6 +5,7 @@ import Services from "@/components/ui/home/Services";
 import Skills from "@/components/ui/home/Skills";
 import Overview from "@/components/ui/home/overview/Overview";
 import Latest from "@/components/ui/projects/latest/Latest";
+import Head from "next/head";
 
 export const metadata = {
   title: "Rakibul Portfolio | Home",
@@ -13,37 +14,56 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div>
-      <Banner />
-      <div className="lg:-mt-32 container mx-auto px-4 py-10 xl:px-0">
-        <Overview />
-      </div>
-      <div className="mt-20 container mx-auto px-4 xl:px-0 space-y-20">
-        <About />
-
-        <div>
-          <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
-            <div className="text-center mb-10">
-              <h2 className="text-5xl mb-2">
-                Latest <span className="text-color-secondery">Projects</span>
-              </h2>
-              <div className="mb-3 flex justify-center">
-                <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
-              </div>
-              <h3 className="mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
-                Explore a selection of my most recent work, showcasing
-                creativity, technical skill, and problem-solving across diverse
-                projects from {'"concept to execution"'} highlighting
-                innovation, attention to detail, and impactful results.
-              </h3>
-            </div>
-          </Motion>
-          <Latest />
+    <>
+      <Head>
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin=""
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        <link rel="preconnect" href="http://localhost:5000" />
+      </Head>
+      <main>
+        <Banner />
+        <div className="lg:-mt-32 container mx-auto px-4 py-10 xl:px-0">
+          <Overview />
         </div>
-        <Skills />
-        <Services />
-        <div></div>
-      </div>
-    </div>
+        <div className="mt-20 container mx-auto px-4 xl:px-0 space-y-20">
+          <About />
+
+          <div>
+            <Motion
+              initial={{ opacity: 0, y: 50 }}
+              inView={{ opacity: 1, y: 0 }}
+            >
+              <div className="text-center mb-10">
+                <h2 className="text-5xl mb-2">
+                  Latest <span className="text-color-secondery">Projects</span>
+                </h2>
+                <div className="mb-3 flex justify-center">
+                  <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
+                </div>
+                <h3 className="mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
+                  Explore a selection of my most recent work, showcasing
+                  creativity, technical skill, and problem-solving across
+                  diverse projects from {'"concept to execution"'} highlighting
+                  innovation, attention to detail, and impactful results.
+                </h3>
+              </div>
+            </Motion>
+            <Latest />
+          </div>
+          <Skills />
+          <Services />
+          <div></div>
+        </div>
+      </main>
+    </>
   );
 }

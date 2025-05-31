@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type blog = {
@@ -17,11 +18,14 @@ export default function BlogCard({ data }: { data: blog }) {
       <div className="absolute top-8 left-6 bg-red-500 rounded-md px-3 py-1 uppercase text-white">
         {data.type}
       </div>
-      {/* eslint-disable-next-line */}
-      <img
+      <Image
+        width={300}
+        height={350}
+        loading="lazy"
         src={data.thumbnail_image}
         className="w-full h-full rounded-xl z-0"
-        alt="blog image title"
+        alt={`Rakibul Hasan portfolio blog about ${data.title}`}
+        unoptimized
       />
       <div>
         <Link
