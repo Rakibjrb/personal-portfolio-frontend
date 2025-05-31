@@ -22,6 +22,27 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* ✅ Preconnect to third-party resources */}
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin=""
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="http://localhost:5000" />
+
+        {/* ✅ DNS Prefetch */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        <link rel="dns-prefetch" href="//localhost:5000" />
+      </head>
       <body className={`${kanit.className} antialiased`}>
         <QueryClientProvider client={queryClient}>
           {children}

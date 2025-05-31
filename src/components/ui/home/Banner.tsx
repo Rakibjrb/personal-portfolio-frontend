@@ -35,13 +35,25 @@ export default function Banner() {
               inView={{ opacity: 1, y: 0 }}
             >
               <div className="flex gap-4">
-                <Link href={data[0].link} target="blank">
+                <Link
+                  href={data[0].link}
+                  target="blank"
+                  aria-label="Rakibul Hasan | GitHub profile"
+                >
                   <FaGithubSquare className="text-3xl" />
                 </Link>
-                <Link href={data[2].link} target="blank">
+                <Link
+                  href={data[2].link}
+                  target="blank"
+                  aria-label="Rakibul Hasan | Facebook profile"
+                >
                   <FaFacebookSquare className="text-3xl" />
                 </Link>
-                <Link href={data[1].link} target="blank">
+                <Link
+                  href={data[1].link}
+                  target="blank"
+                  aria-label="Rakibul Hasan | LinkedIn profile"
+                >
                   <FaLinkedin className="text-3xl" />
                 </Link>
               </div>

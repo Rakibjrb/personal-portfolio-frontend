@@ -41,11 +41,11 @@ export default function Services() {
           <div className="mb-3 flex justify-center">
             <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
           </div>
-          <h3 className="mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
+          <p className="mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
             Web desgin and development have been my bread and buffer for more
             than 2 years. During that time {"I've"} discovered that I can help
             startups and companies with the following services.
-          </h3>
+          </p>
         </div>
       </Motion>
 
@@ -60,9 +60,9 @@ export default function Services() {
               inView={{ opacity: 1, x: 0 }}
             >
               {icon[index].icon}
-              <h4 className="text-xl font-semibold uppercase my-2">
+              <h3 className="text-xl font-semibold uppercase my-2">
                 {service.title}
-              </h4>
+              </h3>
               <p className="text-justify">{service.details}</p>
             </Motion>
           </div>

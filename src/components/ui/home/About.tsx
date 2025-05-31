@@ -21,7 +21,7 @@ export default function About() {
               height={250}
               className="rounded-xl w-3/4 md:w-3/5 lg:w-auto mx-auto"
               src={"/mypic2.jpg"}
-              alt="about section pic"
+              alt="Rakibul Hasan | web developer, frontend developer, react developer"
             />
           </Motion>
         </div>
