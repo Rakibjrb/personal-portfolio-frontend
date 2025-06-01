@@ -4,6 +4,7 @@ import Motion from "@/components/common/Motion";
 import useProfileLinks from "@/hooks/useProfileLinks";
 import Image from "next/image";
 import Link from "next/link";
+import * as clickAnimation from "motion/react-client";
 
 export default function About() {
   const { data, isLoading } = useProfileLinks();
@@ -71,13 +72,23 @@ export default function About() {
                   target="blank"
                   className="border bg-[#52dde2] hover:bg-transparent py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
                 >
-                  Download Resume
+                  <clickAnimation.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                  >
+                    Download Resume
+                  </clickAnimation.div>
                 </Link>
                 <Link
                   href={"/educations"}
                   className="border hover:bg-[#52dde2] py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
                 >
-                  Education
+                  <clickAnimation.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                  >
+                    Education
+                  </clickAnimation.div>
                 </Link>
               </div>
             )}

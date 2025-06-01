@@ -15,7 +15,7 @@ type blog = {
 export default function BlogCard({ data }: { data: blog }) {
   return (
     <div className="relative space-y-1.5 p-4 rounded-xl z-0">
-      <div className="absolute top-8 left-6 bg-red-500 rounded-md px-3 py-1 uppercase text-white">
+      <div className="absolute top-8 left-6 bg-red-500 rounded-md px-3 py-1 uppercase text-white text-xs">
         {data.type}
       </div>
       <Image

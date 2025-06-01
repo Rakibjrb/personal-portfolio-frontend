@@ -10,7 +10,7 @@ export default function ProjectsPage() {
   return (
     <div className="container mx-auto px-4 py-6 lg:py-14 xl:px-0 min-h-screen">
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
-        <h2 className="text-center text-5xl mb-2">Projects</h2>
+        <h1 className="text-center text-5xl mb-2">Projects</h1>
         <div className="mb-3 flex justify-center">
           <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
         </div>
