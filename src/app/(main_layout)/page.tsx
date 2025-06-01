@@ -84,20 +84,20 @@ export default function Home() {
               inView={{ opacity: 1, x: 0 }}
             >
               <LatestBlogs home={true} />
-            </Motion>
-            <div className="flex justify-center items-center mt-8">
-              <Link
-                href={"/blogs"}
-                className="py-2 px-7 rounded-xl bg-[#52dde2] uppercase"
-              >
-                <clickAnimation.div
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.8 }}
+              <div className="flex justify-center items-center mt-8">
+                <Link
+                  href={"/blogs"}
+                  className="py-2 px-7 rounded-xl bg-[#52dde2] uppercase"
                 >
-                  Read More
-                </clickAnimation.div>
-              </Link>
-            </div>
+                  <clickAnimation.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                  >
+                    Read More
+                  </clickAnimation.div>
+                </Link>
+              </div>
+            </Motion>
           </div>
 
           <div></div>
