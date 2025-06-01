@@ -33,7 +33,7 @@ export default function Educations() {
   return (
     <div className="max-w-7xl mx-auto">
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
-        <h2 className="text-center text-5xl mb-2">Educations</h2>
+        <h1 className="text-center text-5xl mb-2">Educations</h1>
         <div className="mb-3 flex justify-center">
           <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
         </div>

@@ -44,9 +44,9 @@ export default function ContactPage() {
     <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
       <div className="min-h-screen bg-gradient-to-b from-[#fff] to-[#c0f5ff] flex items-center justify-center p-6">
         <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8 space-y-6">
-          <h2 className="text-3xl font-bold text-gray-800 text-center">
+          <h1 className="text-3xl font-bold text-gray-800 text-center">
             Contact Us
-          </h2>
+          </h1>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Name */}
