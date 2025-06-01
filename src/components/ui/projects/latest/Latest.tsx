@@ -10,8 +10,10 @@ import useLatestProjects from "@/hooks/projects/useLatestProjects";
 
 type project = {
   _id: string;
-  project_name: string;
   image: string;
+  project_name: string;
+  type: string;
+  category: string;
 };
 
 export default function Latest() {

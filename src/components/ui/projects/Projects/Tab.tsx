@@ -8,8 +8,10 @@ import useProjects from "@/hooks/projects/useProjects";
 
 type project = {
   _id: string;
-  project_name: string;
   image: string;
+  project_name: string;
+  type: string;
+  category: string;
 };
 
 export default function Tab({ selectedTab }: { selectedTab: string }) {
