@@ -1,4 +1,5 @@
 import Motion from "@/components/common/Motion";
+import LatestBlogs from "@/components/ui/blogs/LatestBlogs";
 import About from "@/components/ui/home/About";
 import Banner from "@/components/ui/home/Banner";
 import Services from "@/components/ui/home/Services";
@@ -6,6 +7,8 @@ import Skills from "@/components/ui/home/Skills";
 import Overview from "@/components/ui/home/overview/Overview";
 import Latest from "@/components/ui/projects/latest/Latest";
 import Head from "next/head";
+import Link from "next/link";
+import * as clickAnimation from "motion/react-client";
 
 export const metadata = {
   title: "Rakibul Portfolio | Home",
@@ -37,15 +40,15 @@ export default function Home() {
         <div className="mt-20 container mx-auto px-4 xl:px-0 space-y-20">
           <About />
 
+          <Services />
+
           <div>
             <Motion
               initial={{ opacity: 0, y: 50 }}
               inView={{ opacity: 1, y: 0 }}
             >
               <div className="text-center mb-10">
-                <h2 className="text-5xl mb-2">
-                  Latest <span className="text-color-secondery">Projects</span>
-                </h2>
+                <h2 className="text-5xl mb-2 text-color-primary">Projects</h2>
                 <div className="mb-3 flex justify-center">
                   <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
                 </div>
@@ -60,7 +63,43 @@ export default function Home() {
             <Latest />
           </div>
           <Skills />
-          <Services />
+
+          <div>
+            <Motion
+              initial={{ opacity: 0, y: 50 }}
+              inView={{ opacity: 1, y: 0 }}
+            >
+              <div className="text-center mb-10">
+                <h2 className="text-5xl mb-2 text-color-primary">Read Blogs</h2>
+                <div className="mb-3 flex justify-center">
+                  <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
+                </div>
+                <h3 className="mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
+                  Read my latest blogs to where I write about my work and tech
+                </h3>
+              </div>
+            </Motion>
+            <Motion
+              initial={{ opacity: 0, x: 50 }}
+              inView={{ opacity: 1, x: 0 }}
+            >
+              <LatestBlogs home={true} />
+            </Motion>
+            <div className="flex justify-center items-center mt-8">
+              <Link
+                href={"/blogs"}
+                className="py-2 px-7 rounded-xl bg-[#52dde2] uppercase"
+              >
+                <clickAnimation.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  Read More
+                </clickAnimation.div>
+              </Link>
+            </div>
+          </div>
+
           <div></div>
         </div>
       </main>

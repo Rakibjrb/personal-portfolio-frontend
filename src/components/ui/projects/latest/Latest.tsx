@@ -42,7 +42,7 @@ export default function Latest() {
         </>
       )}
 
-      <div className="flex justify-center items-center mt-4">
+      <div className="flex justify-center items-center mt-8">
         <Link
           href={"/projects"}
           className="py-2 px-7 rounded-xl bg-[#52dde2] uppercase"

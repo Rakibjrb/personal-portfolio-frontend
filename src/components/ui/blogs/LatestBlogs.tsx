@@ -16,7 +16,7 @@ type blog = {
   type: string;
 };
 
-export default function LatestBlogs() {
+export default function LatestBlogs({ home }: { home: boolean }) {
   const { data, isLoading } = useLatestBlogs();
 
   return (
@@ -28,7 +28,13 @@ export default function LatestBlogs() {
           {!data ? (
             "No content available"
           ) : (
-            <div className="space-y-4">
+            <div
+              className={`${
+                home
+                  ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+                  : "space-y-4"
+              }`}
+            >
               {data.map((blog: blog) => (
                 <div key={blog._id} className="shadow-xl rounded-xl">
                   <BlogCard data={blog} />

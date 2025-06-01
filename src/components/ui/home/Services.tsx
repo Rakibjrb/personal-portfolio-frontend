@@ -35,9 +35,7 @@ export default function Services() {
     <div>
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
         <div className="text-center mb-10">
-          <h2 className="text-5xl mb-2">
-            My <span className="text-color-secondery">Services</span>
-          </h2>
+          <h2 className="text-5xl mb-2 text-color-primary">Services</h2>
           <div className="mb-3 flex justify-center">
             <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
           </div>
