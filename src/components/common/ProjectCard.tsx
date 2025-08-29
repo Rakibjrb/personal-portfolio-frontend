@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: { project: project }) {
         width={300}
         height={350}
         loading="lazy"
-        className="rounded-xl w-full h-[250px]"
+        className="rounded-xl w-full h-[200px] lg:h-[250px]"
         src={project.image}
         alt={
           `Rakibul Hasan portfolio project ${project.project_name}` ||
@@ -32,11 +32,10 @@ export default function ProjectCard({ project }: { project: project }) {
         }
         unoptimized
       />
-      <div className="project_card_text_container absolute -bottom-[300px] left-0 w-full h-full bg-[#00000084] flex justify-center items-center rounded-xl transition-all duration-700">
+      <div className="project_card_text_container absolute -bottom-[300px] left-0 w-full h-full bg-[#000000b0] flex justify-center items-center rounded-xl transition-all duration-700">
         <Link
           href={`/projects/details/${project._id}`}
-          className="text-xl text-center text-white font-bold"
-        >
+          className="text-xl text-center text-color-secondery font-bold">
           {project.project_name}
         </Link>
       </div>

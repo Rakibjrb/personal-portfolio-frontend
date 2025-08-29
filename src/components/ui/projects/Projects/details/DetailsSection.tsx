@@ -35,7 +35,7 @@ export default function DetailsSection() {
                 }
                 unoptimized
               />
-              <h1 className="text-3xl lg:text-4xl font-bold">
+              <h1 className="text-color-primary text-2xl lg:text-3xl font-bold">
                 {project.project_name}
               </h1>
               <div className="flex gap-3">
@@ -46,11 +46,11 @@ export default function DetailsSection() {
                   {project.category} Project
                 </div>
               </div>
-              <div>
+              <div className="text-color-primary">
                 <h3 className="text-2xl font-semibold mb-3">Details</h3>
                 <p className="lg:text-xl">{project.details}</p>
               </div>
-              <div>
+              <div className="text-color-primary">
                 <h3 className="text-2xl font-semibold mb-3">Features</h3>
                 <div className="pl-5 space-y-1.5">
                   {project.features.map((feature: string) => (
@@ -62,45 +62,41 @@ export default function DetailsSection() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-3">
+                <h3 className="text-color-primary text-2xl font-semibold mb-3">
                   Used Technologies
                 </h3>
                 <div className="flex flex-wrap gap-4">
                   {project.techstacks.map((techstack: string) => (
                     <p
                       key={techstack}
-                      className="px-5 py-2 rounded-xl shadow-xl uppercase bg-gray-100"
-                    >
+                      className="px-5 py-2 rounded-xl shadow-xl uppercase bg-gray-400">
                       {techstack}
                     </p>
                   ))}
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-3">
+                <h3 className="text-color-primary text-2xl font-semibold mb-3">
                   Additional Links
                 </h3>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href={project.live_link}
                     target="blank"
-                    className="px-5 py-2 rounded-xl shadow-xl uppercase text-white hover:text-black bg-red-500 hover-primary transition-all duration-300"
-                  >
+                    className="px-5 py-2 rounded-xl shadow-xl uppercase text-white hover:text-black bg-red-500 hover-primary transition-all duration-300">
                     Live Link
                   </Link>
                   <Link
                     href={project.client_code}
                     target="blank"
-                    className="px-5 py-2 rounded-xl shadow-xl uppercase bg-gray-200 hover-primary"
-                  >
+                    className="px-5 py-2 rounded-xl shadow-xl uppercase bg-gray-400 hover-primary">
                     Clinet Side Code Link
                   </Link>
                   {project.server_code != "none" && (
                     <Link
                       href={project.server_code}
                       target="blank"
-                      className="px-5 py-2 rounded-xl shadow-xl uppercase bg-gray-200 hover-primary"
-                    >
+                      className="px-5 py-2 rounded-xl shadow-xl uppercase bg-gray-400 hover-primary">
                       Server Side Code Link
                     </Link>
                   )}

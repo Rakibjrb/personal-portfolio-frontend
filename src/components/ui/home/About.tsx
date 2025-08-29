@@ -15,8 +15,7 @@ export default function About() {
         <div className="lg:w-1/3">
           <Motion
             initial={{ opacity: 0, x: -50 }}
-            inView={{ opacity: 1, x: 0 }}
-          >
+            inView={{ opacity: 1, x: 0 }}>
             <Image
               width={500}
               height={250}
@@ -28,14 +27,14 @@ export default function About() {
         </div>
         <div className="lg:w-2/3">
           <Motion initial={{ opacity: 0, x: 50 }} inView={{ opacity: 1, x: 0 }}>
-            <h2 className="text-center md:text-left text-5xl mb-2">
+            <h2 className="text-color-primary text-center md:text-left text-5xl mb-2">
               About <span className="text-color-secondery">Me</span>
             </h2>
             <div className="mb-8 flex justify-center md:justify-start">
               <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
             </div>
 
-            <p className="text-xl text-justify xl:text-left">
+            <p className="text-color-primary text-xl text-justify xl:text-left">
               Hello, I am Rakibul Hasan, a passionate Front End and MERN stack
               web developer with a keen eye for design and a love for crafting
               seamless user experiences. With a strong foundation in HTML, CSS,
@@ -44,7 +43,7 @@ export default function About() {
               Node.js) stack.
             </p>
 
-            <div className="my-10 flex flex-wrap gap-6">
+            <div className="text-color-primary my-10 flex flex-wrap gap-6">
               <div>
                 <h3 className="text-xl mb-1.5 font-semibold uppercase">Age</h3>
                 <h4>20+ Years</h4>
@@ -70,23 +69,19 @@ export default function About() {
                 <Link
                   href={data[3].link || "/"}
                   target="blank"
-                  className="border bg-[#52dde2] hover:bg-transparent py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
-                >
+                  className="bg-[#52dde2] py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl">
                   <clickAnimation.div
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.8 }}
-                  >
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.8 }}>
                     Download Resume
                   </clickAnimation.div>
                 </Link>
                 <Link
                   href={"/educations"}
-                  className="border hover:bg-[#52dde2] py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl transition-all duration-300"
-                >
+                  className="border border-[#52dde2] text-[#52dde2] py-1 px-3 md:py-2 md:px-5 rounded-lg text-xl">
                   <clickAnimation.div
                     whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.8 }}
-                  >
+                    whileTap={{ scale: 0.8 }}>
                     Education
                   </clickAnimation.div>
                 </Link>

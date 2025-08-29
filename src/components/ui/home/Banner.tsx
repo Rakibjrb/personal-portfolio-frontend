@@ -5,12 +5,13 @@ import useProfileLinks from "@/hooks/useProfileLinks";
 import Link from "next/link";
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
+import * as clickAnimation from "motion/react-client";
 
 export default function Banner() {
   const { data, isLoading } = useProfileLinks();
 
   return (
-    <div className="banner w-full h-screen lg:h-[calc(100vh-100px)] flex items-center text-color-primary">
+    <div className="banner w-full min-h-screen flex items-center text-color-primary">
       <div className="container mx-auto px-4 xl:px-0">
         <Motion initial={{ opacity: 0, y: -50 }} inView={{ opacity: 1, y: 0 }}>
           <h1 className="text-5xl md:text-7xl my-0">Rakibul Hasan</h1>
@@ -28,36 +29,40 @@ export default function Banner() {
           </h2>
 
           {isLoading ? (
-            ""
+            "..."
           ) : (
-            <Motion
-              initial={{ opacity: 0, y: 50 }}
-              inView={{ opacity: 1, y: 0 }}
-            >
-              <div className="flex gap-4">
-                <Link
-                  href={data[0].link}
-                  target="blank"
-                  aria-label="Rakibul Hasan | GitHub profile"
-                >
+            <div className="flex gap-4">
+              <Link
+                href={data[0].link}
+                target="blank"
+                aria-label="Rakibul Hasan | GitHub profile">
+                <clickAnimation.div
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.8 }}>
                   <FaGithubSquare className="text-3xl" />
-                </Link>
-                <Link
-                  href={data[2].link}
-                  target="blank"
-                  aria-label="Rakibul Hasan | Facebook profile"
-                >
+                </clickAnimation.div>
+              </Link>
+              <Link
+                href={data[2].link}
+                target="blank"
+                aria-label="Rakibul Hasan | Facebook profile">
+                <clickAnimation.div
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.8 }}>
                   <FaFacebookSquare className="text-3xl" />
-                </Link>
-                <Link
-                  href={data[1].link}
-                  target="blank"
-                  aria-label="Rakibul Hasan | LinkedIn profile"
-                >
+                </clickAnimation.div>
+              </Link>
+              <Link
+                href={data[1].link}
+                target="blank"
+                aria-label="Rakibul Hasan | LinkedIn profile">
+                <clickAnimation.div
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.8 }}>
                   <FaLinkedin className="text-3xl" />
-                </Link>
-              </div>
-            </Motion>
+                </clickAnimation.div>
+              </Link>
+            </div>
           )}
         </Motion>
       </div>

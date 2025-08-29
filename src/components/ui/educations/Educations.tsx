@@ -33,19 +33,20 @@ export default function Educations() {
   return (
     <div className="max-w-7xl mx-auto">
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
-        <h1 className="text-center text-5xl mb-2">Educations</h1>
+        <h1 className="text-color-primary text-center text-5xl mb-2">
+          Educations
+        </h1>
         <div className="mb-3 flex justify-center">
           <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
         </div>
       </Motion>
 
-      <div className="space-y-5">
+      <div className="space-y-5 mt-10">
         {educations.map((edu) => (
           <Motion
             initial={{ opacity: 0, x: 50 }}
             inView={{ opacity: 1, x: 0 }}
-            key={edu._id}
-          >
+            key={edu._id}>
             <div onClick={() => setShowByID(edu._id)}>
               <div className="bg-white shadow-lg rounded-xl p-5 md:flex items-center gap-6 hover-primary cursor-pointer z-30">
                 <Image
@@ -67,8 +68,7 @@ export default function Educations() {
                   showByID === edu._id
                     ? "w-full h-auto mt-5 opacity-100"
                     : "mt-0 h-0 w-full opacity-0 hidden"
-                } transition-all duration-300 bg-white shadow-lg rounded-xl md:flex items-center gap-6 cursor-pointer z-0`}
-              >
+                } transition-all duration-300 shadow-lg rounded-xl md:flex items-center gap-6 cursor-pointer z-0`}>
                 {!edu.image_gallery ? (
                   <div className="w-full text-center text-2xl">
                     No Content available right now

@@ -1,23 +1,19 @@
 /* custom css */
 body {
   scroll-behavior: smooth;
+  background: #000000db;
 }
 
 .banner {
-  background: linear-gradient(#c0f5ffc1, #ffffff);
+  background: linear-gradient(#000, #0dcdd419);
 }
 
 .text-color-primary {
-  color: #525252;
+  color: #c7c7c7;
 }
 
 .text-color-secondery {
   color: #0dced4;
-}
-
-.service-card:hover .service-icon {
-  color: #000;
-  transition: 0.3s;
 }
 
 .project_card:hover .project_card_text_container {

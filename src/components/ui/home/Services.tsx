@@ -39,7 +39,7 @@ export default function Services() {
           <div className="mb-3 flex justify-center">
             <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
           </div>
-          <p className="mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
+          <p className="text-color-primary mt-4 px-2 md:px-10 lg:px-0 lg:w-2/4 mx-auto">
             Web desgin and development have been my bread and buffer for more
             than 2 years. During that time {"I've"} discovered that I can help
             startups and companies with the following services.
@@ -50,18 +50,18 @@ export default function Services() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8">
         {services.map((service, index) => (
           <div
-            className="space-y-4 shadow-xl p-6 xl:p-10 rounded-lg hover-primary service-card"
-            key={service.id}
-          >
+            className="space-y-4 p-6 xl:p-10 rounded-lg bg-gray-800 hover:bg-transparent transition-all duration-300"
+            key={service.id}>
             <Motion
               initial={{ opacity: 0, x: -50 }}
-              inView={{ opacity: 1, x: 0 }}
-            >
+              inView={{ opacity: 1, x: 0 }}>
               {icon[index].icon}
-              <h3 className="text-xl font-semibold uppercase my-2">
+              <h3 className="text-color-primary text-xl font-semibold uppercase my-5">
                 {service.title}
               </h3>
-              <p className="text-justify">{service.details}</p>
+              <p className="text-color-primary text-justify">
+                {service.details}
+              </p>
             </Motion>
           </div>
         ))}
