@@ -29,12 +29,14 @@ export default function Blogs() {
             "No content available"
           ) : (
             <div>
-              <div className="shadow-xl rounded-xl">
+              <div className="border border-[#0dcdd47e] rounded-xl">
                 <BlogCard data={data[5]} />
               </div>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {data.map((blog: blog) => (
-                  <div key={blog._id} className="shadow-xl rounded-xl">
+                  <div
+                    key={blog._id}
+                    className="border border-[#0dcdd47e] rounded-xl">
                     <BlogCard data={blog} />
                   </div>
                 ))}

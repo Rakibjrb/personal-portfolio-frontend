@@ -30,13 +30,12 @@ export default function BlogCard({ data }: { data: blog }) {
       <div>
         <Link
           href={`/blgos/blog/${data._id}`}
-          className="text-xl md:text-[16px] lg:text-2xl hover:text-blue-500 transition-colors duration-300"
-        >
+          className="text-[#c7c7c7] text-xl md:text-[16px] lg:text-2xl hover:text-blue-500 transition-colors duration-300">
           {data.title}
         </Link>
       </div>
 
-      <div>
+      <div className="text-color-primary mt-4">
         <b>{data.author.name}</b>
         <div>{data.author.published_date}</div>
       </div>

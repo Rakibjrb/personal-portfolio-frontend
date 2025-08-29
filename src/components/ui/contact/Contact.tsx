@@ -42,21 +42,21 @@ export default function ContactPage() {
 
   return (
     <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
-      <div className="min-h-screen bg-gradient-to-b from-[#fff] to-[#c0f5ff] flex items-center justify-center p-6">
-        <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8 space-y-6">
-          <h1 className="text-3xl font-bold text-gray-800 text-center">
+      <div className="min-h-screen flex items-center justify-center p-6">
+        <div className="w-full max-w-2xl bg-gray-800 shadow-xl rounded-2xl p-8 space-y-6">
+          <h1 className="text-3xl font-bold text-gray-800 text-center text-color-primary">
             Contact Us
           </h1>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Name */}
-            <div className="flex items-center border rounded-xl px-4 py-2 bg-gray-50">
-              <User className="text-gray-500 mr-3" />
+            <div className="flex items-center border rounded-xl px-4 py-2 bg-gray-900">
+              <User className="text-color-secondery mr-3" />
               <input
                 type="text"
                 placeholder="Your Name"
                 {...register("name", { required: "Name is required" })}
-                className="bg-transparent w-full outline-none"
+                className="bg-transparent w-full outline-none text-color-primary"
               />
             </div>
             {errors.name && (
@@ -64,8 +64,8 @@ export default function ContactPage() {
             )}
 
             {/* Email */}
-            <div className="flex items-center border rounded-xl px-4 py-2 bg-gray-50">
-              <Mail className="text-gray-500 mr-3" />
+            <div className="flex items-center border rounded-xl px-4 py-2 bg-gray-900">
+              <Mail className="text-color-secondery mr-3" />
               <input
                 type="email"
                 placeholder="Your Email"
@@ -76,7 +76,7 @@ export default function ContactPage() {
                     message: "Invalid email address",
                   },
                 })}
-                className="bg-transparent w-full outline-none"
+                className="bg-transparent w-full outline-none text-color-primary"
               />
             </div>
             {errors.email && (
@@ -86,13 +86,13 @@ export default function ContactPage() {
             )}
 
             {/* Subject */}
-            <div className="flex items-center border rounded-xl px-4 py-2 bg-gray-50">
-              <Pencil className="text-gray-500 mr-3" />
+            <div className="flex items-center border rounded-xl px-4 py-2 bg-gray-900">
+              <Pencil className="text-color-secondery mr-3" />
               <input
                 type="text"
                 placeholder="Subject"
                 {...register("subject", { required: "Subject is required" })}
-                className="bg-transparent w-full outline-none"
+                className="bg-transparent w-full outline-none text-color-primary"
               />
             </div>
             {errors.subject && (
@@ -102,13 +102,13 @@ export default function ContactPage() {
             )}
 
             {/* Message */}
-            <div className="flex items-start border rounded-xl px-4 py-2 bg-gray-50">
-              <MessageSquareText className="text-gray-500 mr-3 mt-1" />
+            <div className="flex items-start border rounded-xl px-4 py-2 bg-gray-900">
+              <MessageSquareText className="text-color-secondery mr-3 mt-1" />
               <textarea
                 rows={5}
                 placeholder="Your Message"
                 {...register("message", { required: "Message is required" })}
-                className="bg-transparent w-full outline-none resize-none"
+                className="bg-transparent w-full outline-none resize-none text-color-primary"
               />
             </div>
             {errors.message && (
@@ -120,8 +120,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#52dde2] hover:bg-[#89fbff] text-black font-semibold py-3 rounded-xl transition-all duration-300 cursor-pointer"
-            >
+              className="w-full bg-[#52dde2a2] hover:bg-[#89fbff9d] text-black font-semibold py-3 rounded-xl transition-all duration-300 cursor-pointer">
               {loading ? (
                 <div className="flex justify-center">
                   <TbFidgetSpinner className="text-xl animate-spin" />

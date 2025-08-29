@@ -61,7 +61,7 @@ export const skills = [
   },
   {
     id: "044",
-    icon: <SiNextdotjs className="text-black dark:text-white text-6xl" />,
+    icon: <SiNextdotjs className="text-gray-500 dark:text-white text-6xl" />,
     name: "Next",
     details:
       "Built user interfaces using React. Learned about reusable components.",
@@ -75,7 +75,7 @@ export const skills = [
   },
   {
     id: "06",
-    icon: <SiExpress className="text-gray-600 dark:text-gray-300 text-6xl" />,
+    icon: <SiExpress className="text-gray-400 dark:text-gray-300 text-6xl" />,
     name: "Express",
     details:
       "Built server-side applications using Express.js. Learned about APIs and http request handling.",
@@ -105,7 +105,7 @@ export default function Skills() {
     <div>
       <Motion initial={{ opacity: 0, y: 50 }} inView={{ opacity: 1, y: 0 }}>
         <div className="text-center mb-10">
-          <h2 className="text-5xl mb-2">Skills</h2>
+          <h2 className="text-color-primary text-5xl mb-2">Skills</h2>
           <div className="mb-3 flex justify-center">
             <div className="w-[100px] h-[6px] rounded-xl bg-[#52dde2]"></div>
           </div>
@@ -116,15 +116,15 @@ export default function Skills() {
         {skills.map((skill) => (
           <div
             key={skill.id}
-            className="p-8 rounded-lg shadow-xl hover-primary"
-          >
+            className="p-8 rounded-lg hover:bg-gray-800 transition-all duration-300 hover:cursor-pointer">
             <Motion
               initial={{ opacity: 0, x: -50 }}
-              inView={{ opacity: 1, x: 0 }}
-            >
+              inView={{ opacity: 1, x: 0 }}>
               <div className="flex flex-col justify-center items-center text-center gap-4">
                 {skill.icon}
-                <h3 className="text-xl font-semibold">{skill.name}</h3>
+                <h3 className="text-xl font-semibold text-color-primary">
+                  {skill.name}
+                </h3>
               </div>
             </Motion>
           </div>

@@ -34,11 +34,10 @@ export default function Details() {
               <div className="space-y-5">
                 <h2 className="text-2xl font-bold">Latest Projects</h2>
                 {data.map((project: project) => (
-                  <div className="shadow-xl rounded-xl" key={project._id}>
+                  <div className="rounded-xl" key={project._id}>
                     <Motion
                       initial={{ opacity: 0, x: 50 }}
-                      inView={{ opacity: 1, x: 0 }}
-                    >
+                      inView={{ opacity: 1, x: 0 }}>
                       <ProjectCard project={project} />
                     </Motion>
                   </div>

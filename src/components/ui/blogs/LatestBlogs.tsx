@@ -33,10 +33,11 @@ export default function LatestBlogs({ home }: { home: boolean }) {
                 home
                   ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
                   : "space-y-4"
-              }`}
-            >
+              }`}>
               {data.map((blog: blog) => (
-                <div key={blog._id} className="shadow-xl rounded-xl">
+                <div
+                  key={blog._id}
+                  className="bg-gray-800 hover:bg-transparent transition-all duration-300 rounded-xl">
                   <BlogCard data={blog} />
                 </div>
               ))}
