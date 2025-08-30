@@ -11,7 +11,7 @@ export default function layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen w-full container mx-auto m-4 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4 z-0">
+    <div className="min-h-screen w-full container mx-auto px-3 xl:px-0 m-4 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4 z-0">
       <div className="md:col-span-2 xl:col-span-4 z-0">{children}</div>
       <div className="md:col-span-1 xl:col-span-2 z-0">
         <LatestBlogs home={false} />
