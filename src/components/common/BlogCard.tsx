@@ -29,7 +29,7 @@ export default function BlogCard({ data }: { data: blog }) {
       />
       <div>
         <Link
-          href={`/blgos/blog/${data._id}`}
+          href={`/blogs/blog/${data._id}`}
           className="text-[#c7c7c7] text-xl md:text-[16px] lg:text-2xl hover:text-blue-500 transition-colors duration-300">
           {data.title}
         </Link>
