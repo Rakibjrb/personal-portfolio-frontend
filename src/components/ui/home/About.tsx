@@ -20,7 +20,7 @@ export default function About() {
               width={500}
               height={250}
               className="rounded-xl w-3/4 md:w-3/5 lg:w-auto mx-auto"
-              src={"/mypic2.jpg"}
+              src={"/my-pic.jpg"}
               alt="Rakibul Hasan | web developer, frontend developer, react developer"
             />
           </Motion>
